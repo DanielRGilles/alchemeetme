@@ -1,14 +1,14 @@
 import { useContext, createContext, useState } from "react";
 
-const UserContext = createContext()
+const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
     const [ user, setUser ] = useState([])
 
-    return <UserContext.Provider value={{user, setUser}}>{children}</UserContext.Provider>
+    return <UserContext.Provider value={{ user, setUser }}> { children } </UserContext.Provider>
 }
 
-const useUser = () => {
+const useProfile = () => {
     const context = useContext(UserContext)
 
     if ( context === undefined ) {
@@ -17,4 +17,4 @@ const useUser = () => {
     return context
 }
 
-export { UserProvider, useUser }
+export { UserProvider, useProfile }
