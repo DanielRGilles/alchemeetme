@@ -3,11 +3,12 @@ import './App.css'
 import Layout from './views/Layout/Layout'
 import Home from './views/Home/Home'
 import { fetchUser } from './services/user'
-import { UserProvider } from './context/UserContext'
+import { useProfile } from './context/UserContext'
+
 
 function App() {
   // inital value should match the data type of end value
-  const [user, setUser] = useState([])
+  const { user, setUser } = useProfile({})
 
   useEffect(() => {
     fetchUser()
@@ -17,14 +18,15 @@ function App() {
       .catch((error) => {
         throw new Error(`Error: ${error}`)
       })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
-    <UserProvider >
+    
     <Layout >
       <Home />
     </Layout>
-    </UserProvider>
+    
   )
 }
 
