@@ -2,7 +2,7 @@ import { useProfile } from '../../context/UserContext'
 import LikeList from '../LikeList/LikeList'
 
 export default function Profile() {
-  const  user  = useProfile()
+  const { user }  = useProfile()
   // eslint-disable-next-line no-console
   console.log(user)
   return (

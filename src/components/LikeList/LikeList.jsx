@@ -1,11 +1,16 @@
+import { useProfile } from '../../context/UserContext'
 import Like from './Like'
 
-export default function LikeList({ likes }) {
+export default function LikeList() {
+  const { user } = useProfile();
+  
+  // eslint-disable-next-line no-console
+  console.log(user.likes)
   return (
     <>
       <h2 className="text-center text-xl">Interests</h2>
       <ul className="mt-2 pt-3 flex flex-wrap mx-6 border-t">
-        {likes.map((like) => {
+        {user.likes.map((like) => {
           return (
             <li key={like}>
               <Like like={like} />
