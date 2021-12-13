@@ -3,8 +3,7 @@ import LikeList from '../LikeList/LikeList'
 
 export default function Profile() {
   const { user }  = useProfile()
-  // eslint-disable-next-line no-console
-  console.log(user)
+ 
   return (
     <div className="bg-gray-100 bg-opacity-95 my-12 pb-6 w-full justify-center items-center overflow-hidden md:max-w-sm rounded-lg shadow-sm mx-auto">
       <div className="relative h-40">

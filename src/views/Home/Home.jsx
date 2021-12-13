@@ -5,8 +5,7 @@ import { useProfile } from '../../context/UserContext'
 const Home = () => {
   const { user } = useProfile()
   const [loading, setLoading] = useState(true)
-  // eslint-disable-next-line no-console
-  console.log(user);
+ 
 
   useEffect(() => {
     if (user.name) {

@@ -4,8 +4,6 @@ import Like from './Like'
 export default function LikeList() {
   const { user } = useProfile();
   
-  // eslint-disable-next-line no-console
-  console.log(user.likes)
   return (
     <>
       <h2 className="text-center text-xl">Interests</h2>
